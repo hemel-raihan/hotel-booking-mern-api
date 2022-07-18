@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }, () =>{
-    console.log('connected to the databasee')
+    console.log('connected to the database')
 })
 
 app.use('/api/auth', authRoute)
