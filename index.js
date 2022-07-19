@@ -6,11 +6,18 @@ const userRoute = require('./routes/users.js')
 const hotelRoute = require('./routes/hotels.js')
 const roomRoute = require('./routes/rooms.js')
 const cookieParser = require('cookie-parser')
+const cors = require('cors')
+
 const app = express()
 
 dotenv.config();
 app.use(cookieParser())
 app.use(express.json())
+
+app.use(cors({
+    credentials: true,
+    origin: ['http://localhost:3000','']
+}))
 
 mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
